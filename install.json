@@ -1,0 +1,63 @@
+{
+  "resources": {
+    "head": [
+      {
+        "type": "script",
+        "src": "bootstrap-toggle.min.js",
+        "moduleType": "global",
+        "depends": {
+          "github.com/jquery/jquery:jquery.js": "jQuery"
+        }
+      },
+      {
+        "type": "style",
+        "src": "bootstrap-toggle.min.css"
+      },
+      {
+        "type": "script",
+        "src": "app.js"
+      }
+    ]
+  },
+  "dependencies": {
+    "github.com/jquery/jquery": ">= 2.1.1, <= 2.1.1"
+  },
+  "preview": {
+    "handlers": [
+      {
+        "options": ["*"],
+        "execute": "INSTALL_SCOPE.setOptions(INSTALL_OPTIONS)"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "customize": {
+        "order": 1,
+        "type": "boolean",
+        "title": "Customize",
+        "default": false
+      },
+      "on": {
+        "order": 2,
+        "type": "string",
+        "title": "On Text",
+        "description": "Default is 'On' ",
+        "default": "On",
+        "showIf": {
+          "customize": true
+        }
+      },
+      "off": {
+        "order": 3,
+        "type": "string",
+        "title": "Off Text",
+        "description": "Default is 'Off' ",
+        "default": "Off",
+        "showIf": {
+          "customize": true
+        }
+      }
+    }
+  }
+}
